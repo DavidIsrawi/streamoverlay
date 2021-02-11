@@ -3,6 +3,10 @@ var orgConfig = {
       "Logo": "logos/amazon.png",
       "Stylesheet": "styles/base.css"
   },
+  "bumi": {
+    "Logo": "logos/bumi.png",
+    "Stylesheet": "styles/bumi.css"
+  },
   "microsoft": {
       "Logo": "logos/microsoft.png",
       "Stylesheet": "styles/base.css"
