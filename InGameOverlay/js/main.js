@@ -307,6 +307,12 @@ $(document).ready(function() {
         changeName($("#p1_name"));
       } else if (e.keyCode == 112) { // p
         changeName($("#p2_name"));
+      } else if (e.keyCode == 113) { // q
+        // hotkey for initial setup
+        changeName($("#p1_name"));
+        changeCharacter($("#p1_name"));
+        changeName($("#p2_name"));
+        changeCharacter($("#p2_name"));
       } else if (e.keyCode == 59) { // semicolon
         changeCharacter($("#p1_name"));
       } else if (e.keyCode == 39) { // single quote
