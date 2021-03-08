@@ -118,10 +118,11 @@ function decrementScore(element) {
   element.html((value - 1));
 }
 
-function changeName(element) {
-  var result = prompt("Enter a new name for " + element.attr('id').substring(0, 2));
-  if (result !== null && result !== "") {
-    element.html(result);
+function changeName(element, name = "") {
+  if (name === "")
+    name = prompt("Enter a new name for " + element.attr('id').substring(0, 2));
+  if (name !== null && name !== "") {
+    element.html(name);
   }
 }
 
@@ -169,10 +170,11 @@ function convertUserInputToCharacter(input) {
   return result;
 }
 
-function changeCharacter(element) {
-  var result = prompt("Enter character for " + element.attr('id').substring(0, 2));
-  if (result !== null && result !== "") {
-    var img_url = 'url(\"characters/' + characterMode + '/' + convertUserInputToCharacter(result) + ".png\")";
+function changeCharacter(element, character = "") {
+  if (character === "")
+    character = prompt("Enter character for " + element.attr('id').substring(0, 2));
+  if (character !== null && character !== "") {
+    var img_url = 'url(\"characters/' + characterMode + '/' + convertUserInputToCharacter(character) + ".png\")";
     element.css('background-image', img_url);
   }
 }
@@ -308,9 +310,19 @@ $(document).ready(function() {
       } else if (e.keyCode == 112) { // p
         changeName($("#p2_name"));
       } else if (e.keyCode == 113) { // q
-        // hotkey for initial setup
+        // initial general setup
         changeName($("#p1_name"));
         changeCharacter($("#p1_name"));
+        changeName($("#p2_name"));
+        changeCharacter($("#p2_name"));
+      } else if (e.keyCode == 122) { // z
+        // initial dahveed setup
+        changeName($("#p1_name"), "Dahveed");
+        changeCharacter($("#p1_name"), "k rool");
+      } else if (e.keyCode == 120) { // x
+        // initial dahveed setup plus opponent
+        changeName($("#p1_name"), "Dahveed");
+        changeCharacter($("#p1_name"), "k rool");
         changeName($("#p2_name"));
         changeCharacter($("#p2_name"));
       } else if (e.keyCode == 59) { // semicolon
