@@ -186,6 +186,14 @@ function changeRound() {
   }
 }
 
+function hideRound() {
+  $('#round').css('visibility', 'hidden');
+}
+
+function hideTournamentName() {
+  $('#tournament_name').css('visibility', 'hidden');
+}
+
 function setTournamentName(name) {
   if (name !== null && name !== "") {
     $('#tournament_name').html(name);
@@ -286,6 +294,14 @@ $(document).ready(function() {
   $('#round').click(function() {
     changeRound();
   });
+
+  $('#round').contextmenu(function() {
+    hideRound();
+  });
+
+  $('#tournament_name').contextmenu(function() {
+    hideTournamentName();
+  })
 
   $('#instructions').click(function() {
     $(this).parent().hide();
